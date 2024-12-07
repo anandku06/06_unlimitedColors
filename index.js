@@ -11,7 +11,14 @@ const randomColor = () => {
     return color
 }
 
-const startChangingColor = () => {}
+let intervalID = null
+const startChangingColor = () => {
+    const changeBGColor = document.body.style.backgroundColor = randomColor
+
+    if(!intervalID){
+        intervalID = setInterval(changeBGColor, 1000)
+    }
+}
 const stopChangingColor = () => {}
 
 document.querySelector('#start').addEventListener('click', startChangingColor)
