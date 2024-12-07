@@ -19,7 +19,12 @@ const startChangingColor = () => {
         intervalID = setInterval(changeBGColor, 1000)
     }
 }
-const stopChangingColor = () => {}
+const stopChangingColor = () => {
+    if(intervalID){
+        clearInterval(intervalID)
+        intervalID = null
+    }
+}
 
 document.querySelector('#start').addEventListener('click', startChangingColor)
 
